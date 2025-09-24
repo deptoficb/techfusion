@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechFusion 2025 - Innovate. Code. Compete. Create the Future.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sixtyfour+Convergence&display=swap" rel="stylesheet">
+    <meta name="description" content="Join TechFusion 2025 from October 14-16. ₹50,000 prize pool across 6 domains: IoT, Data Science, Cybersecurity, AI/ML, Web Dev, Core CSE. Open to all colleges.">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    
+    <!-- Custom Styles -->
+     <style>
+    /* Basic layout so the demo looks okay */
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin: 24px; background:#f5f7fb; color:#111; }
+
+    /* Accordion core styles */
+    .accordion-item { background: #fff; border: 1px solid #e6e9ef; border-radius: 12px; overflow: hidden; }
+    .accordion-trigger { width:100%; background:transparent; border:0; padding:18px; cursor:pointer; text-align:left; }
+    .accordion-trigger:focus { outline: 3px solid rgba(99,102,241,0.18); outline-offset: 2px; }
+
+    /* Icon wrapper that we rotate */
+    .accordion-icon { display:inline-flex; align-items:center; transition: transform 0.32s ease; }
+    .accordion-icon.rotate-180 { transform: rotate(180deg); }
+
+    /* Animated accordion content (collapsed by default) */
+    .accordion-content {
+      max-height: 0;              /* collapsed */
+      overflow: hidden;
+      opacity: 0;
+      transition: max-height 0.32s ease, opacity 0.24s ease;
+      padding: 0 18px;            /* horizontal padding; vertical padding handled inside content */
+      background: #000000;
+    }
+    .accordion-content.open { opacity: 1; }
+
+    /* inner padding area */
+    .accordion-body { padding: 16px 0 20px; } /* top/bottom inside content */
+
+    /* small extras for demo */
+    h3 { margin: 0; font-size: 1.1rem; }
+    .meta { color: #6b7280; font-size: .95rem; margin-top: 6px; }
+    .tag { display:inline-block; padding:4px 8px; border-radius:6px; font-size: .75rem; margin-right:6px; background:#eef2ff; color:#3730a3; }
+
+    /* Preloader styles */
+    .preloader-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+    }
+    .preloader-text {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #111;
+      animation: fadeIn 1s ease-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        background: 'hsl(240, 10%, 4%)',
+                        foreground: 'hsl(0, 0%, 95%)',
+                        card: 'hsl(240, 6%, 8%)',
+                        'card-foreground': 'hsl(0, 0%, 95%)',
+                        primary: 'hsl(195, 100%, 50%)',
+                        'primary-foreground': 'hsl(240, 10%, 4%)',
+                        secondary: 'hsl(263, 70%, 50%)',
+                        'secondary-foreground': 'hsl(0, 0%, 95%)',
+                        muted: 'hsl(240, 5%, 15%)',
+                        'muted-foreground': 'hsl(240, 5%, 65%)',
+                        accent: 'hsl(142, 70%, 45%)',
+                        'accent-foreground': 'hsl(240, 10%, 4%)',
+                        border: 'hsl(240, 6%, 20%)',
+                        input: 'hsl(240, 5%, 15%)',
+                        ring: 'hsl(195, 100%, 50%)'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="min-h-screen bg-background text-foreground font-sans antialiased">
+    <!-- Preloader Animation -->
+<div id="preloader" class="preloader-bg relative overflow-hidden">
+  <span class="preloader-text" id="preloader-text">TechFusion 2025</span>
+</div>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur bg-background/80 border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <h1 class="text-xl font-bold gradient-text">OCULUS AEGIS</h1>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#home" class="nav-link px-3 py-2 transition-colors text-muted-foreground hover:text-primary" data-testid="nav-home">Home</a>
+                        
+                        <a href="#domains" class="nav-link px-3 py-2 transition-colors text-muted-foreground hover:text-primary" data-testid="nav-domains">Domains</a>
+                        <a href="#schedule" class="nav-link px-3 py-2 transition-colors text-muted-foreground hover:text-primary" data-testid="nav-schedule">Schedule</a>
+                        <a href="#problems" class="nav-link px-3 py-2 transition-colors text-muted-foreground hover:text-primary" data-testid="nav-problems">Problems</a>                 
+                        <a href="#contact" class="nav-link px-3 py-2 transition-colors text-muted-foreground hover:text-primary" data-testid="nav-contact">Contact</a>
+                    </div>
+                </div>
+
+                <!-- Register Button -->
+                <div class="hidden md:block">
+                    <a href="#registration" class="bg-primary text-primary-foreground px-6 py-2 rounded-md hover:bg-primary/90 pulse-glow transition-colors" data-testid="button-register-nav">
+                        Register Now
+                    </a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-btn" class="md:hidden p-2 text-foreground">
+  <i data-lucide="menu" class="h-6 w-6"></i>
+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Navigation -->
+        <div id="mobile-menu" class="md:hidden bg-background/95 border-t border-border hidden">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors" data-testid="nav-mobile-home">Home</a>
+                <a href="#about" class="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors" data-testid="nav-mobile-about">About</a>
+                <a href="#domains" class="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors" data-testid="nav-mobile-domains">Domains</a>
+                <a href="#schedule" class="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors" data-testid="nav-mobile-schedule">Schedule</a>
+                <a href="#problems" class="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors" data-testid="nav-mobile-problems">Problems</a>
+                <a href="#prizes" class="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors" data-testid="nav-mobile-prizes">Prizes</a>
+                <a href="#contact" class="block px-3 py-2 text-muted-foreground hover:text-primary transition-colors" data-testid="nav-mobile-contact">Contact</a>
+                <div class="px-3 py-2">
+                    <a href="#registration" class="bg-primary text-primary-foreground w-full block text-center px-6 py-2 rounded-md hover:bg-primary/90 transition-colors" data-testid="button-register-mobile">
+                        Register Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="pt-24 pb-20 bg-background relative overflow-hidden">
+        <!-- Background Video -->
+        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover z-0" id="hero-bg-video">
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <!-- Hero Content -->
+        <div class="relative z-10 fade-in-hero">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <div class="w-full flex flex-col md:flex-row justify-center items-center md:space-x-12 space-y-4 md:space-y-0">
+                    <!-- Left Logo -->
+                    <img src="DSI.png" alt="College Logo" class="h-20 md:h-24 w-auto">
+
+                    <!-- Text -->
+                    <h2 class="text-xl md:text-3xl font-semibold text-center px-2" style="color: #ffffff;">
+                        DAYANANDA SAGAR ACADEMY OF TECHNOLOGY AND MANAGEMENT
+                    </h2>
+
+                    <!-- Right Logo -->
+                    <img src="OculusAegis.jpg" alt="College Logo" class="h-20 md:h-24 w-auto">
+                </div>
+                <h1 class="pt-10 text-4xl md:text-6xl font-extrabold mb-5 bg-gradient-to-r from-pink-400 via-orange-300 to-yellow-400 bg-clip-text text-transparent text-center leading-tight break-words" style="font-family: 'Sixtyfour', 'Sixtyfour Convergence', sans-serif; text-shadow: 2px 2px 8px rgba(235, 232, 23, 0.922); word-break: break-word; hyphens: auto;">
+                    TechFusion <span class="block md:inline">2025</span>
+                </h1>
+                <h2 class="text-2xl md:text-3xl font-semibold mb-6 text-muted-foreground" style="color:   #00eeff;">Innovate. Code. Compete. Create the Future.</h2>
+                <p class="text-lg text-muted-foreground mb-8" style="color: #00eeff;">
+                    Join us from October 13-15 for a 3-day coding marathon with a ₹50,000 prize pool. Open to all colleges!
+                </p>
+            </div>
+    
+  
+                    <!-- Countdown Timer -->
+                    <div class="max-w-md mx-auto mb-10">
+                        <div class="grid grid-cols-4 gap-4">
+                            <div class="countdown-digit rounded-lg p-4 text-center">
+                                <div id="days" class="text-2xl md:text-3xl font-bold text-primary">00</div>
+                                <div class="text-xs text-muted-foreground">DAYS</div>
+                            </div>
+                            <div class="countdown-digit rounded-lg p-4 text-center">
+                                <div id="hours" class="text-2xl md:text-3xl font-bold text-primary">00</div>
+                                <div class="text-xs text-muted-foreground">HOURS</div>
+                            </div>
+                            <div class="countdown-digit rounded-lg p-4 text-center">
+                                <div id="minutes" class="text-2xl md:text-3xl font-bold text-primary">00</div>
+                                <div class="text-xs text-muted-foreground">MINUTES</div>
+                            </div>
+                            <div class="countdown-digit rounded-lg p-4 text-center">
+                                <div id="seconds" class="text-2xl md:text-3xl font-bold text-primary">00</div>
+                                <div class="text-xs text-muted-foreground">SECONDS</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- CTA Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+                        <a href="#registration" class="bg-primary text-primary-foreground px-8 py-4 text-lg font-semibold hover:bg-primary/90 pulse-glow rounded-md transition-colors shadow-lg" data-testid="button-register-hero">
+                            Register Now
+                        </a>
+                        <a href="#domains" class="border border-border text-foreground px-8 py-4 text-lg font-semibold hover:border-primary hover:text-primary rounded-md transition-colors shadow-lg" data-testid="button-view-domains">
+                            View Domains
+                        </a>
+                    </div>
+                    <!-- Domain Tags -->
+                    <div class="flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">IoT</span>
+                        <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">Data Science</span>
+                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Cybersecurity</span>
+                        <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">AI/ML</span>
+                        <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">Web Dev</span>
+                        <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">Open Innovation</span>
+                    </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-muted/20 slide-in-left">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Why Join <span class="gradient-text">TechFusion</span>?
+                </h2>
+                <div class="max-w-3xl mx-auto">
+                    <p class="text-lg text-muted-foreground mb-6">
+                       Get ready for TechFusion 2025, a 3-day Inter-College hackathon happening from October 14–16, 2025! Join brilliant minds from across colleges to innovate, code, and create the future. With a ₹50,000 prize pool and challenges spread across 6 exciting domains—IoT, Data Science, Cybersecurity, AI/ML, Web Development, and Open Innovation—this is your chance to showcase your skills, collaborate with peers, and build solutions that matter.
+                    </p>
+                    <p class="text-lg text-muted-foreground">
+                        Whether you’re a beginner or a pro, TechFusion 2025 is the perfect platform to learn, network, and compete. Don’t just watch the future happen—create it with us!
+                    </p>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
+                <div class="text-center" data-testid="stat-participants">
+                    <div class="text-3xl font-bold text-primary mb-2">300+</div>
+                    <div class="text-muted-foreground">Participants</div>
+                </div>
+                <div class="text-center" data-testid="stat-colleges">
+                    <div class="text-3xl font-bold text-secondary mb-2">25+</div>
+                    <div class="text-muted-foreground">Colleges</div>
+                </div>
+                <div class="text-center" data-testid="stat-prizes">
+                    <div class="text-3xl font-bold text-accent mb-2">₹50K+</div>
+                    <div class="text-muted-foreground">Prize Pool</div>
+                </div>
+                <div class="text-center" data-testid="stat-domains">
+                    <div class="text-3xl font-bold text-primary mb-2">6</div>
+                    <div class="text-muted-foreground">Domains</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Domains Section -->
+    <section id="domains" class="py-20 slide-in-right">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                   Hackathon Domains - <span class="gradient-text">Your Choice, Your Challenge</span>
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Six exciting domains to explore, each with unique challenges and opportunities for innovation.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- IoT Domain -->
+                <div class="domain-card rounded-xl p-6 hover-glow fade-in-up" data-testid="domain-card-0">
+                    <div class="text-primary text-4xl mb-4">
+                        <i data-lucide="cpu" class="h-10 w-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-foreground">Internet of Things (Component's Not provided)</h3>
+                    <p class="text-muted-foreground mb-4">Build connected solutions using sensor integration, hardware troubleshooting, and networked device management.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">Sensors</span>
+                        <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">Arduino</span>
+                        <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">ESP32</span>
+                        <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">MQTT</span>
+                    </div>
+                </div>
+
+                <!-- Data Science Domain -->
+                <div class="domain-card rounded-xl p-6 hover-glow" data-testid="domain-card-1">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i data-lucide="trending-up" class="h-10 w-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-foreground">Data Science</h3>
+                    <p class="text-muted-foreground mb-4">Extract insights from data through cleaning, visualization, clustering, and predictive modeling techniques.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">Python</span>
+                        <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">Pandas</span>
+                        <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">Visualization</span>
+                        <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">Statistics</span>
+                    </div>
+                </div>
+
+                <!-- Cybersecurity Domain -->
+                <div class="domain-card rounded-xl p-6 hover-glow" data-testid="domain-card-2">
+                    <div class="text-accent text-4xl mb-4">
+                        <i data-lucide="shield" class="h-10 w-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-foreground">Cybersecurity</h3>
+                    <p class="text-muted-foreground mb-4">Defend digital assets through CTF challenges, vulnerability assessment, and digital forensics analysis.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-accent/10 text-accent px-2 py-1 rounded text-sm">Penetration Testing</span>
+                        <span class="bg-accent/10 text-accent px-2 py-1 rounded text-sm">Cryptography</span>
+                        <span class="bg-accent/10 text-accent px-2 py-1 rounded text-sm">Forensics</span>
+                        <span class="bg-accent/10 text-accent px-2 py-1 rounded text-sm">CTF</span>
+                    </div>
+                </div>
+
+                <!-- AI/ML Domain -->
+                <div class="domain-card rounded-xl p-6 hover-glow" data-testid="domain-card-3">
+                    <div class="text-primary text-4xl mb-4">
+                        <i data-lucide="brain" class="h-10 w-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-foreground">AI/ML</h3>
+                    <p class="text-muted-foreground mb-4">Create intelligent systems using classification, NLP, computer vision, and reinforcement learning techniques.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">TensorFlow</span>
+                        <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">Computer Vision</span>
+                        <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">NLP</span>
+                        <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">Deep Learning</span>
+                    </div>
+                </div>
+
+                <!-- Web Development Domain -->
+                <div class="domain-card rounded-xl p-6 hover-glow" data-testid="domain-card-4">
+                    <div class="text-secondary text-4xl mb-4">
+                        <i data-lucide="code" class="h-10 w-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-foreground">Web Development</h3>
+                    <p class="text-muted-foreground mb-4">Build modern web applications with front-end, back-end, responsive UI/UX, REST APIs, and performance optimization.</p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">React</span>
+                        <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">Node.js</span>
+                        <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">APIs</span>
+                        <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">UI/UX</span>
+                    </div>
+                </div>
+
+                <!-- Core CSE Domain -->
+                <div class="domain-card rounded-xl p-6 hover-glow" data-testid="domain-card-5">
+                    <div class="text-accent text-4xl mb-4">
+                        <i data-lucide="cog" class="h-10 w-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-foreground">Open Innovation</h3>
+                    <p class="text-muted-foreground mb-4">A free-choice track where participants can work on any idea of their own—bringing creativity, unique solutions, and groundbreaking concepts without domain restrictions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Schedule Section -->
+    <section id="schedule" class="py-20 bg-muted/20 slide-in-left">
+    
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                Event <span class="gradient-text">Schedule</span>
+            </h2>
+            <p class="text-lg text-muted-foreground">Three days of intense coding, learning, and innovation</p>
+        </div>
+        <div class="space-y-8">
+            <!-- Day 1 -->
+            <div class="bg-card rounded-xl p-6 border border-border hover-glow schedule-checkpoint" data-checkpoint="1">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                    <div>
+                        <h3 class="text-2xl font-bold text-primary mb-2">Day 1 - Quiz & Debugging challenge</h3>
+                        <p class="text-lg text-muted-foreground">October 13, 2025</p>
+                    </div>
+                    <div class="text-sm text-muted-foreground">Oct 13, 9:00 AM - Oct13, 6:00 PM</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-primary rounded-full"></div>
+                        <span class="text-1xl"><strong>9:00 AM</strong> - Registration for Quiz and debugging challenge & Check-in</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-primary rounded-full"></div>
+                        <span class="text-1xl"><strong>10:00 AM</strong> - Inaugration & Opening Ceremony</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-primary rounded-full"></div>
+                        <span class="text-1xl"><strong>11:00 AM</strong> - Technical Quiz Round</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-primary rounded-full"></div>
+                        <span class="text-1xl"><strong>2:00 PM</strong> - IoT Debugging Challenge</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-primary rounded-full"></div>
+                        <span class="text-1xl"><strong>4:00 PM</strong> - Day 1 Endnote</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Day 2 -->
+            <div class="bg-card rounded-xl p-6 border border-border hover-glow schedule-checkpoint" data-checkpoint="2">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                    <div>
+                        <h3 class="text-2xl font-bold text-secondary mb-2">Day 2 - Hackathon Begins</h3>
+                        <p class="text-lg text-muted-foreground">October 14, 2025</p>
+                    </div>
+                    <div class="text-sm text-muted-foreground">Oct 14, 10:00 AM - Oct 15, 12:00 AM</div>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                        <span class="text-1xl"><strong>10:00 AM</strong> - Instuctions session about hackathon </span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                        <span class="text-1xl"><strong>10:30 AM</strong> - Start of Hackathon</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                        <span class="text-1xl"><strong>1:00 PM</strong> - Lunch Break</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                        <span class="text-1xl"><strong>2:30 PM</strong> - Round-1 Evaluation</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                        <span class="text-1xl"><strong>5:00 PM</strong> - Refreshment break & Activities </span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                        <span class="text-1xl"><strong>7:00 PM</strong> - Round-2 Evaluation</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                        <span class="text-1xl"><strong>8:30 PM</strong> - Dinner & Night Coding</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                        <span class="text-1xl"><strong>12:00 AM</strong> - Refreshment Activities</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Day 3 -->
+            <div class="bg-card rounded-xl p-6 border border-border hover-glow" data-testid="schedule-day-3">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                    <div>
+                        <h3 class="text-2xl font-bold text-accent mb-2">Day 3 - Finale</h3>
+                        <p class="text-lg text-muted-foreground">October 15, 2025</p>
+                    </div>
+                    <div class="text-sm text-muted-foreground">Oct 15, 9:00 AM - Oct 15, 5:00 PM</div>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-accent rounded-full"></div>
+                        <span class="text-1xl"><strong>9:30 AM</strong> - Breakfast</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-accent rounded-full"></div>
+                        <span class="text-1xl"><strong>10:30 AM</strong> - End of hackathon</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-accent rounded-full"></div>
+                        <span class="text-1xl"><strong>11:00 PM</strong> - Start of Final Round Evaluation & Presentation</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-accent rounded-full"></div>
+                        <span class="text-1xl"><strong>1:00 PM</strong> - Judging & Evaluation </span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-accent rounded-full"></div>
+                        <span class="text-1xl"><strong>3:00 PM</strong> - Results & Awards</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-2 h-2 bg-accent rounded-full"></div>
+                        <span class="text-1xl"><strong>4:30 PM</strong> - Closing Ceremony</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Problems Section -->
+    <section id="problems" class="py-20 slide-in-right">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Problem <span class="gradient-text">Statements</span>
+                </h2>
+                <p class="text-lg text-muted-foreground">Challenge yourself with these exciting problem statements across different domains</p>
+            </div>
+            <div class="space-y-6">
+                <!-- IoT Problems -->
+                <div class="accordion-item bg-card rounded-xl border border-border overflow-hidden">
+                    <button class="accordion-trigger w-full p-6 text-left hover:bg-muted/20 transition-colors" data-testid="problem-toggle-0">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <i data-lucide="cpu" class="text-primary h-6 w-6"></i>
+                                <h3 class="text-xl font-bold text-foreground">IoT & Hardware (3 Problems)</h3>
+                            </div>
+                            <i data-lucide="chevron-down" class="text-muted-foreground transition-transform accordion-icon"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <div class="space-y-4">
+                            <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-0-0">
+                                <h4 class="font-semibold text-primary mb-2">Smart Campus Energy Management</h4>
+                                <p class="text-sm text-muted-foreground mb-3">Design an IoT-based system to monitor and optimize energy consumption across college buildings. Integrate sensors, data collection, and automated control systems.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">Arduino</span>
+                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">Sensors</span>
+                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">MQTT</span>
+                                </div>
+                            </div>
+                            <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-0-1">
+                                <h4 class="font-semibold text-primary mb-2">Precision Agriculture Monitor</h4>
+                                <p class="text-sm text-muted-foreground mb-3">Create a comprehensive IoT solution for monitoring soil conditions, weather patterns, and crop health with automated irrigation control.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">ESP32</span>
+                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">LoRa</span>
+                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">Cloud</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Data Science Problems -->
+                <div class="accordion-item bg-card rounded-xl border border-border overflow-hidden">
+                    <button class="accordion-trigger w-full p-6 text-left hover:bg-muted/20 transition-colors" data-testid="problem-toggle-1">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <i data-lucide="trending-up" class="text-secondary h-6 w-6"></i>
+                                <h3 class="text-xl font-bold text-foreground">Data Science (4 Problems)</h3>
+                            </div>
+                            <i data-lucide="chevron-down" class="accordion-icon text-muted-foreground transition-transform"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <div class="space-y-4">
+                            <div class="bg-muted/30 rounded-lg p-4">
+                                <h4 class="font-semibold text-secondary mb-2">Campus Placement Predictor</h4>
+                                <p class="text-sm text-muted-foreground mb-3">Build a model to predict student placement chances based on academic and extracurricular data.</p>
+                            </div>
+                            <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-1-1">
+                                <h4 class="font-semibold text-secondary mb-2">Smart Library Analytics</h4>
+                                <p class="text-sm text-muted-foreground mb-3">Analyze library usage patterns and recommend book purchases using clustering and visualization.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">Clustering</span>
+                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">Visualization</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Cybersecurity Problems -->
+                <div class="accordion-item bg-card rounded-xl border border-border overflow-hidden">
+                    <button class="accordion-trigger w-full p-6 text-left hover:bg-muted/20 transition-colors" data-testid="problem-toggle-2">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <i data-lucide="shield" class="text-accent h-6 w-6"></i>
+                                <h3 class="text-xl font-bold text-foreground">Cybersecurity (2 Problems)</h3>
+                            </div>
+                            <i data-lucide="chevron-down" class="text-muted-foreground transition-transform accordion-icon"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <div class="space-y-4">
+                            <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-2-0">
+                                <h4 class="font-semibold text-accent mb-2">Secure File Sharing</h4>
+                                <p class="text-sm text-muted-foreground mb-3">Design a secure file sharing platform using encryption and access control.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-accent/10 text-accent px-2 py-1 rounded text-xs">Encryption</span>
+                                    <span class="bg-accent/10 text-accent px-2 py-1 rounded text-xs">Access Control</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- AI/ML Problems -->
+                <div class="accordion-item bg-card rounded-xl border border-border overflow-hidden">
+                    <button class="accordion-trigger w-full p-6 text-left hover:bg-muted/20 transition-colors" data-testid="problem-toggle-3">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <i data-lucide="brain" class="text-primary h-6 w-6"></i>
+                                <h3 class="text-xl font-bold text-foreground">AI/ML (3 Problems)</h3>
+                            </div>
+                            <i data-lucide="chevron-down" class="text-muted-foreground transition-transform accordion-icon"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <div class="space-y-4">
+                            <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-3-0">
+                                <h4 class="font-semibold text-primary mb-2">Image Classification</h4>
+                                <p class="text-sm text-muted-foreground mb-3">Develop a model to classify images into different categories using deep learning techniques.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">TensorFlow</span>
+                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">Keras</span>
+                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">CNN</span>
+                                </div>
+                            </div>
+                            <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-3-1">
+                                <h4 class="font-semibold text-primary mb-2">Sentiment Analysis</h4>
+                                <p class="text-sm text-muted-foreground mb-3">Build a sentiment analysis tool to classify text as positive, negative, or neutral.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">NLTK</span>
+                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">TextBlob</span>
+                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">VADER</span>
+                                </div>
+                            </div>
+                            <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-3-2">
+                                <h4 class="font-semibold text-primary mb-2">Stock Price Prediction</h4>
+                                <p class="text-sm text-muted-foreground mb-3">Predict future stock prices using historical data and machine learning algorithms.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">Pandas</span>
+                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">Scikit-learn</span>
+                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">LSTM</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Web Development Problems -->
+                <div class="accordion-item bg-card rounded-xl border border-border overflow-hidden">
+                    <button class="accordion-trigger w-full p-6 text-left hover:bg-muted/20 transition-colors" data-testid="problem-toggle-4">
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-4">
+                                <i data-lucide="code" class="text-secondary h-6 w-6"></i>
+                                <h3 class="text-xl font-bold text-foreground">Web Development (3 Problems)</h3>
+                            </div>
+                            <i data-lucide="chevron-down" class="text-muted-foreground transition-transform accordion-icon"></i>
+                        </div>
+                    </button>
+                    <div class="accordion-content px-6 pb-6 hidden">
+                        <div class="space-y-4">
+                            <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-4-0">
+                                <h4 class="font-semibold text-secondary mb-2">Portfolio Website</h4>
+                                <p class="text-sm text-muted-foreground mb-3">Create a personal portfolio website to showcase your projects, skills, and experience.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">HTML</span>
+                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">CSS</span>
+                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">JavaScript</span>
+                                </div>
+                            </div>
+                            <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-4-1">
+                                <h4 class="font-semibold text-secondary mb-2">Blog Platform</h4>
+                                <p class="text-sm text-muted-foreground mb-3">Develop a full-stack blog platform with user authentication, post creation, and comments.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">Node.js</span>
+                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">Express</span>
+                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">MongoDB</span>
+                                </div>
+                            </div>
+                            <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-4-2">
+                                <h4 class="font-semibold text-secondary mb-2">E-commerce Site</h4>
+                                <p class="text-sm text-muted-foreground mb-3">Build a complete e-commerce site with product listings, shopping cart, and payment integration.</p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">React</span>
+                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">Redux</span>
+                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">Firebase</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Prizes Section -->
+    <section id="prizes" class="py-20 bg-muted/20 slide-in-left">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Exciting <span class="gradient-text">Prizes</span> Await
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Stand a chance to win from a prize pool of ₹5,00,000! Amazing prizes for top performers in each domain.
+                </p>
+            </div>
+
+            <!-- Prize Tiers -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Tier 1 -->
+                <div class="bg-card rounded-xl p-6 border border-border hover-glow" data-testid="prize-tier-1">
+                    <h3 class="text-2xl font-bold mb-4 text-primary">🏆 HackVerse Winner (Hackathon)</h3>
+                    <p class="text-lg text-muted-foreground mb-4">₹25,000 Cash Prize Pool + Goodies</p>
+                    <p class="text-sm text-muted-foreground">Winners will receive a cash prize and goodies.</p>
+                </div>
+
+                <!-- Tier 2 -->
+                <div class="bg-card rounded-xl p-6 border border-border hover-glow" data-testid="prize-tier-2">
+                    <h3 class="text-2xl font-bold mb-4 text-secondary">💡CypherQuest (Quiz) </h3>
+                    <p class="text-lg text-muted-foreground mb-4">₹3,000 Cash Prize Poll</p>
+                    <p class="text-sm text-muted-foreground"> Winners will get a cash prize and exclusive TechFusion swag.</p>
+                </div>
+
+                <!-- Tier 3 -->
+                <div class="bg-card rounded-xl p-6 border border-border hover-glow" data-testid="prize-tier-3">
+                    <h3 class="text-2xl font-bold mb-4 text-accent">🐞 IoTrix (IoT Debugging Challenge)</h3>
+                    <p class="text-lg text-muted-foreground mb-4">₹7,000 Cash Prize Poll + Certificates</p>
+                    <p class="text-sm text-muted-foreground">Winners will receive a cash prize and certificates of achievement.</p>
+                </div>
+
+                <!-- Special Prizes -->
+                <div class="bg-card rounded-xl p-6 border border-border hover-glow" data-testid="prize-special">
+                    <h3 class="text-2xl font-bold mb-4 text-foreground">🎉 Special Prizes</h3>
+                    <p class="text-lg text-muted-foreground mb-4">Amazing goodies and exclusive benefits await participants</p>
+                    <p class="text-sm text-muted-foreground">All participants have a chance to win prizes!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-muted/20 slide-in-right">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Get in <span class="gradient-text">Touch</span>
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Have questions? Reach out to us for any queries or support regarding the hackathon.
+                </p>
+            </div>
+
+            <!-- Contact Details -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Email -->
+                <div class="bg-card rounded-xl p-6 border border-border hover-glow" data-testid="contact-email">
+                    <h3 class="text-xl font-semibold mb-4 text-primary">🤝 Organisation Committee</h3>
+                    <p class="text-lg text-muted-foreground mb-2">For general inquiries and support:</p>
+                    <p class="text-primary font-bold hover:underline">Dhanush Kumar N - +91 6363589086</p>
+                    <p class="text-primary font-bold hover:underline">Turaga Krishna Kartheek - +91 6302753506</p>
+                    <p class="text-primary font-bold hover:underline">Chaithanya T P - +91 7204474815</p>
+                    <p class="text-primary font-bold hover:underline">Phaneendra M - +91 972295043</p>
+
+                </div>
+
+                <!-- Phone -->
+                <div class="bg-card rounded-xl p-6 border border-border hover-glow" data-testid="contact-phone">
+                    <h3 class="text-xl font-semibold mb-4 text-secondary">📱 Media Committee</h3>
+                    <p class="text-lg text-muted-foreground mb-2">For immediate assistance:</p>
+                    <p class="text-primary font-bold hover:underline">K B Charan Teja - +91 7569901979</p>
+                    <p class="text-primary font-bold hover:underline">V Dhatrish - +91 7019261487</p>
+                    <p class="text-primary font-bold hover:underline">Mohan Raj N - +91 9731399212</p>
+                    <p class="text-primary font-bold hover:underline">Vijaya Raghavan N - +91 8147078008</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="registration" class="py-20 slide-in-left">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Register for <span class="gradient-text">TechFusion 2025</span>
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Be a part of the innovation. Fill out the form below to register for the hackathon.
+                </p>
+            </div>
+
+            <!-- Registration Form -->
+            <div class="bg-card rounded-xl p-8 border border-border">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+    <!-- QR 1 -->
+    <div>
+      <div class="p-1 rounded-xl bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500 inline-block">
+    <a href="https://forms.gle/ngfrd5eU1cRrAxbH6" target="_blank">
+      <img src="qr1.jpg" alt="Google Form 3" class="mx-auto h-40 w-40 rounded-lg">
+      </a>
+
+      </div>
+      <p class="mt-3 text-2xl font-medium text-muted-foreground">HackVerse Hackathon 2025</p>
+    </div>
+
+    <!-- QR 2 -->
+    <div>
+      <div class="p-1 rounded-xl bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500 inline-block">
+        <a href="https://forms.gle/8oU7n7rdSTZfed6DA" target="_blank">
+      <img src="qr2.jpg" alt="Google Form 3" class="mx-auto h-40 w-40 rounded-lg">
+        </a>
+
+      </div>
+      <p class="mt-3 text-2xl font-medium text-muted-foreground">Iotrix Debugging challenge</p>
+    </div>
+
+    <!-- QR 3 -->
+    <div>
+    <div class="p-1 rounded-xl bg-gradient-to-r from-pink-500 via-yellow-500 to-purple-500 inline-block">
+        <a href="https://forms.gle/RDsNg1uZEPoS5RP59" target="_blank">
+      <img src="qr3.jpg" alt="Google Form 3" class="mx-auto h-40 w-40 rounded-lg">
+      </a>
+
+      </div>
+      <p class="mt-3 text-2xl font-medium text-muted-foreground">CypherQuest Quiz</p>
+    </div>
+  </div>
+</div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 border-t border-border relative" style="background: black;">
+
+    <div class="max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 text-center">
+    <p class="font- text-1xl md:text-4xl" style="color: #fffefe;">
+        &copy; 2025 Oculus Aegis. All rights reserved.
+    </p>
+</div>
+</footer>
+
+    <script src="main.js"></script>
+      <script>
+    // Accordion JS (smooth open/close + rotate icon + aria)
+    function initializeAccordions() {
+      const accordionItems = document.querySelectorAll('.accordion-item');
+
+      // Helpers to open/close with dynamic heights
+      function openContent(content) {
+        // set explicit maxHeight = scrollHeight to animate
+        content.classList.add('open');
+        content.style.maxHeight = content.scrollHeight + 'px';
+
+        // after transition ends, set maxHeight to 'none' so content can grow/shrink naturally
+        const onEnd = () => {
+          if (content.classList.contains('open')) {
+            content.style.maxHeight = 'none';
+          }
+          content.removeEventListener('transitionend', onEnd);
+        };
+        content.addEventListener('transitionend', onEnd);
+      }
+
+      function closeContent(content) {
+        // If maxHeight is 'none' (open and freed), set it back to pixel height for animation
+        if (content.style.maxHeight === 'none' || content.style.maxHeight === '') {
+          content.style.maxHeight = content.scrollHeight + 'px';
+          // force reflow so the next step animates
+          void content.offsetHeight;
+        }
+        content.classList.remove('open');
+        content.style.maxHeight = '0px';
+      }
+
+      accordionItems.forEach((item, index) => {
+        const trigger = item.querySelector('.accordion-trigger');
+        const content = item.querySelector('.accordion-content');
+        const iconWrap = item.querySelector('.accordion-icon');
+
+        if (!trigger || !content) return;
+
+        // remove any residual "hidden" class from earlier attempts
+        content.classList.remove('hidden');
+
+        // initialize collapsed
+        content.style.maxHeight = '0px';
+        content.setAttribute('aria-hidden', 'true');
+
+        // ensure content has an id for aria-controls
+        if (!content.id) content.id = `accordion-content-${index}`;
+        trigger.setAttribute('aria-controls', content.id);
+        trigger.setAttribute('aria-expanded', 'false');
+
+        trigger.addEventListener('click', () => {
+          const isOpen = content.classList.contains('open');
+
+          // Close all other items (only one open at a time)
+          accordionItems.forEach(otherItem => {
+            const otherContent = otherItem.querySelector('.accordion-content');
+            const otherTrigger = otherItem.querySelector('.accordion-trigger');
+            const otherIcon = otherItem.querySelector('.accordion-icon');
+            if (otherContent && otherContent !== content) {
+              closeContent(otherContent);
+              otherContent.setAttribute('aria-hidden', 'true');
+              if (otherTrigger) otherTrigger.setAttribute('aria-expanded', 'false');
+              if (otherIcon) otherIcon.classList.remove('rotate-180');
+            }
+          });
+
+          if (isOpen) {
+            // close this
+            closeContent(content);
+            content.setAttribute('aria-hidden', 'true');
+            trigger.setAttribute('aria-expanded', 'false');
+            if (iconWrap) iconWrap.classList.remove('rotate-180');
+          } else {
+            // open this
+            openContent(content);
+            content.setAttribute('aria-hidden', 'false');
+            trigger.setAttribute('aria-expanded', 'true');
+            if (iconWrap) iconWrap.classList.add('rotate-180');
+          }
+        });
+      });
+    }
+
+    // Wait for DOM, then create lucide icons and initialize accordions
+document.addEventListener('DOMContentLoaded', function() {
+  const preloader = document.getElementById('preloader');
+  const navbar = document.getElementById('navbar');
+  // Hide navbar while preloader is visible
+  if (preloader && navbar) {
+    navbar.style.display = 'none';
+    // Simulate preloader duration (e.g., 2.5s), then hide preloader and show navbar
+    setTimeout(() => {
+      preloader.style.display = 'none';
+      navbar.style.display = '';
+    }, 2500); // Adjust duration as needed
+  }
+  // Initialize Lucide icons
+  if (window.lucide && typeof lucide.createIcons === 'function') {
+    lucide.createIcons();
+  }
+});
+
+  </script>
+</body>
+</html>
