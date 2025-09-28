@@ -305,103 +305,100 @@
 
     <!-- Domains Section -->
     <section id="domains" class="py-20 slide-in-right">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                   Hackathon Domains - <span class="gradient-text">Your Choice, Your Challenge</span>
-                </h2>
-                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
-                    Six exciting domains to explore, each with unique challenges and opportunities for innovation.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- IoT Domain -->
-                <div class="domain-card rounded-xl p-6 hover-glow fade-in-up" data-testid="domain-card-0">
-                    <div class="text-primary text-4xl mb-4">
-                        <i data-lucide="cpu" class="h-10 w-10"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-foreground">Internet of Things (Component's Not provided)</h3>
-                    <p class="text-muted-foreground mb-4">Build connected solutions using sensor integration, hardware troubleshooting, and networked device management.Check out the Problem Statements.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">Sensors</span>
-                        <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">Arduino</span>
-                        <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">ESP32</span>
-                        <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">MQTT</span>
-                    </div>
-                </div>
-
-                <!-- Data Science Domain -->
-                <div class="domain-card rounded-xl p-6 hover-glow" data-testid="domain-card-1">
-                    <div class="text-secondary text-4xl mb-4">
-                        <i data-lucide="trending-up" class="h-10 w-10"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-foreground">Data Science</h3>
-                    <p class="text-muted-foreground mb-4">Extract insights from data through cleaning, visualization, clustering, and predictive modeling techniques.Check out the Problem Statements.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">Python</span>
-                        <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">Pandas</span>
-                        <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">Visualization</span>
-                        <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">Statistics</span>
-                    </div>
-                </div>
-
-                <!-- Cybersecurity Domain -->
-                <div class="domain-card rounded-xl p-6 hover-glow" data-testid="domain-card-2">
-                    <div class="text-accent text-4xl mb-4">
-                        <i data-lucide="shield" class="h-10 w-10"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-foreground">Cybersecurity</h3>
-                    <p class="text-muted-foreground mb-4">Defend digital assets through CTF challenges, vulnerability assessment, and digital forensics analysis.Check out the Problem Statements.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-accent/10 text-accent px-2 py-1 rounded text-sm">Penetration Testing</span>
-                        <span class="bg-accent/10 text-accent px-2 py-1 rounded text-sm">Cryptography</span>
-                        <span class="bg-accent/10 text-accent px-2 py-1 rounded text-sm">Forensics</span>
-                        <span class="bg-accent/10 text-accent px-2 py-1 rounded text-sm">Security Scanner</span>
-                    </div>
-                </div>
-
-                <!-- AI/ML Domain -->
-                <div class="domain-card rounded-xl p-6 hover-glow" data-testid="domain-card-3">
-                    <div class="text-primary text-4xl mb-4">
-                        <i data-lucide="brain" class="h-10 w-10"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-foreground">AI/ML</h3>
-                    <p class="text-muted-foreground mb-4">Create intelligent systems using classification, NLP, computer vision, and reinforcement learning techniques.Check out the Problem Statements.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">TensorFlow</span>
-                        <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">Computer Vision</span>
-                        <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">NLP</span>
-                        <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">Deep Learning</span>
-                    </div>
-                </div>
-
-                <!-- Web Development Domain -->
-                <div class="domain-card rounded-xl p-6 hover-glow" data-testid="domain-card-4">
-                    <div class="text-secondary text-4xl mb-4">
-                        <i data-lucide="code" class="h-10 w-10"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-foreground">Web Development</h3>
-                    <p class="text-muted-foreground mb-4">Build modern web applications with front-end, back-end, responsive UI/UX, REST APIs, and performance optimization.Check out the Problem Statements.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">React</span>
-                        <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">Node.js</span>
-                        <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">APIs</span>
-                        <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">UI/UX</span>
-                    </div>
-                </div>
-
-                <!-- Core CSE Domain -->
-                <div class="domain-card rounded-xl p-6 hover-glow" data-testid="domain-card-5">
-                    <div class="text-accent text-4xl mb-4">
-                        <i data-lucide="cog" class="h-10 w-10"></i>
-                    </div>
-                    <h3 class="text-xl font-bold mb-3 text-foreground">Open Innovation</h3>
-                    <p class="text-muted-foreground mb-4">A free-choice track where participants can work on any idea of their own—bringing creativity, unique solutions, and groundbreaking concepts without domain restrictions.</p>
-                </div>
-            </div>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">
+        Hackathon Domains - <span class="gradient-text">Your Choice, Your Challenge</span>
+      </h2>
+      <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+        Six exciting domains to explore, each with unique challenges and opportunities for innovation.
+      </p>
+    </div>
+    <!-- Improved grid for domain cards -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- IoT Domain -->
+      <div class="domain-card flex flex-col items-center justify-between rounded-xl p-6 hover-glow fade-in-up h-full" data-testid="domain-card-0">
+        <div class="text-primary text-4xl mb-4">
+          <i data-lucide="cpu" class="h-10 w-10"></i>
         </div>
-    </section>
+        <h3 class="text-xl font-bold mb-3 text-foreground text-center">Internet of Things (Component's Not provided)</h3>
+        <p class="text-muted-foreground mb-4 text-center">Build connected solutions using sensor integration, hardware troubleshooting, and networked device management. Check out the Problem Statements.</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+          <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">Sensors</span>
+          <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">Arduino</span>
+          <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">ESP32</span>
+          <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">MQTT</span>
+        </div>
+      </div>
+      <!-- Data Science Domain -->
+      <div class="domain-card flex flex-col items-center justify-between rounded-xl p-6 hover-glow h-full" data-testid="domain-card-1">
+        <div class="text-secondary text-4xl mb-4">
+          <i data-lucide="trending-up" class="h-10 w-10"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-foreground text-center">Data Science</h3>
+        <p class="text-muted-foreground mb-4 text-center">Extract insights from data through cleaning, visualization, clustering, and predictive modeling techniques. Check out the Problem Statements.</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+          <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">Python</span>
+          <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">Pandas</span>
+          <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">Visualization</span>
+          <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">Statistics</span>
+        </div>
+      </div>
+      <!-- Cybersecurity Domain -->
+      <div class="domain-card flex flex-col items-center justify-between rounded-xl p-6 hover-glow h-full" data-testid="domain-card-2">
+        <div class="text-accent text-4xl mb-4">
+          <i data-lucide="shield" class="h-10 w-10"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-foreground text-center">Cybersecurity</h3>
+        <p class="text-muted-foreground mb-4 text-center">Defend digital assets through CTF challenges, vulnerability assessment, and digital forensics analysis. Check out the Problem Statements.</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+          <span class="bg-accent/10 text-accent px-2 py-1 rounded text-sm">Penetration Testing</span>
+          <span class="bg-accent/10 text-accent px-2 py-1 rounded text-sm">Cryptography</span>
+          <span class="bg-accent/10 text-accent px-2 py-1 rounded text-sm">Forensics</span>
+          <span class="bg-accent/10 text-accent px-2 py-1 rounded text-sm">Security Scanner</span>
+        </div>
+      </div>
+      <!-- AI/ML Domain -->
+      <div class="domain-card flex flex-col items-center justify-between rounded-xl p-6 hover-glow h-full" data-testid="domain-card-3">
+        <div class="text-primary text-4xl mb-4">
+          <i data-lucide="brain" class="h-10 w-10"></i>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-foreground text-center">AI/ML</h3>
+        <p class="text-muted-foreground mb-4 text-center">Create intelligent systems using classification, NLP, computer vision, and reinforcement learning techniques. Check out the Problem Statements.</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+          <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">TensorFlow</span>
+          <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">Computer Vision</span>
+          <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">NLP</span>
+          <span class="bg-primary/10 text-primary px-2 py-1 rounded text-sm">Deep Learning</span>
+        </div>
+      </div>
+      <!-- Web Development & Open Innovation Domain -->
+      <div class="domain-card flex flex-col items-center justify-between rounded-xl p-6 hover-glow h-full" data-testid="domain-card-4-5">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="text-secondary text-4xl">
+            <i data-lucide="code" class="h-10 w-10"></i>
+          </span>
+          <span class="text-accent text-4xl">
+            <i data-lucide="cog" class="h-10 w-10"></i>
+          </span>
+        </div>
+        <h3 class="text-xl font-bold mb-3 text-foreground text-center">Web Development & Open Innovation</h3>
+        <p class="text-muted-foreground mb-4 text-center">
+          Build modern web apps or join Open Innovation to create your own unique solutions.
+        </p>
+        <div class="flex flex-wrap gap-2 justify-center">
+          <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">React</span>
+          <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">Node.js</span>
+          <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">APIs</span>
+          <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-sm">UI/UX</span>
+          <span class="bg-accent/10 text-accent px-2 py-1 rounded text-sm">Creativity</span>
+          <span class="bg-accent/10 text-accent px-2 py-1 rounded text-sm">Unique Solutions</span>
+          <span class="bg-accent/10 text-accent px-2 py-1 rounded text-sm">No Restrictions</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
     <!-- Schedule Section -->
     <section id="schedule" class="py-20 bg-muted/20 slide-in-left">
     
