@@ -252,24 +252,52 @@
                     </p>
                 </div>
             </div>
-
-            <!-- Stats -->
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-16">
-                <div class="text-center" data-testid="stat-participants">
-                    <div id="stat-participants" class="text-3xl font-bold text-primary mb-2">0</div>
-                    <div class="text-muted-foreground">Participants</div>
+        </div>
+    </section>
+    <!-- Events -->
+    <section id="problems" class="py-20 slide-in-right">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">
+                    Events <span class="gradient-text">Problems & Tracks</span>
+                </h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Explore the three main events of TechFusion 2025. Each event offers unique challenges and opportunities to showcase your skills!
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- CipherQuest -->
+                <div class="bg-card rounded-xl p-6 border border-border hover-glow text-center">
+                    <div class="mb-4 text-primary text-4xl">
+                        <i data-lucide="shield" class="h-10 w-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-foreground">CipherQuest (Quiz)</h3>
+                    <p class="text-muted-foreground mb-4">
+                        Test your tech knowledge and problem-solving skills in a fast-paced quiz covering Iot, Blockchain, AI/ML, cybersecurity, general coding, and more. Compete for top scores and exciting prizes!
+                    </p>
+                    <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Quiz</span>
                 </div>
-                <div class="text-center" data-testid="stat-colleges">
-                    <div id="stat-colleges" class="text-3xl font-bold text-secondary mb-2">0</div>
-                    <div class="text-muted-foreground">Colleges</div>
+                <!-- Iotrix -->
+                <div class="bg-card rounded-xl p-6 border border-border hover-glow text-center">
+                    <div class="mb-4 text-accent text-4xl">
+                        <i data-lucide="cpu" class="h-10 w-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-foreground">Iotrix (IoT Debugging Challenge)</h3>
+                    <p class="text-muted-foreground mb-4">
+                        Dive into the world of IoT! Solve hardware and software debugging challenges, troubleshoot sensor integrations, and optimize device connectivity.
+                    </p>
+                    <span class="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm">IoT Debugging</span>
                 </div>
-                <div class="text-center" data-testid="stat-prizes">
-                    <div id="stat-prizes" class="text-3xl font-bold text-accent mb-2">0</div>
-                    <div class="text-muted-foreground">Prize Pool</div>
-                </div>
-                <div class="text-center" data-testid="stat-domains">
-                    <div id="stat-domains" class="text-3xl font-bold text-primary mb-2">0</div>
-                    <div class="text-muted-foreground">Domains</div>
+                <!-- HackVerse -->
+                <div class="bg-card rounded-xl p-6 border border-border hover-glow text-center">
+                    <div class="mb-4 text-secondary text-4xl">
+                        <i data-lucide="code" class="h-10 w-10"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 text-foreground">HackVerse (24-Hour Hackathon)</h3>
+                    <p class="text-muted-foreground mb-4">
+                        Join the flagship 24-hour hackathon! Form teams, pick a domain, and build innovative solutions in AI/ML, Data Science, Web Dev, Cybersecurity, IoT, or Open Innovation.
+                    </p>
+                    <span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-sm">Hackathon</span>
                 </div>
             </div>
         </div>
@@ -388,322 +416,120 @@
         <div class="space-y-8">
             <!-- Day 1 -->
             <div class="bg-card rounded-xl p-6 border border-border hover-glow schedule-checkpoint" data-checkpoint="1">
-                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                        <h3 class="text-2xl font-bold text-primary mb-2">Day 1 - Quiz & Debugging challenge</h3>
-                        <p class="text-lg text-muted-foreground">October 13, 2025</p>
-                    </div>
-                    <div class="text-sm text-muted-foreground">Oct 13, 9:00 AM - Oct13, 6:00 PM</div>
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <div>
+                <h3 class="text-2xl font-bold text-primary mb-2">Day 1 - CipherQuest (Quiz) & Iotrix Debugging challenge</h3>
+                <p class="text-lg text-muted-foreground">October 13, 2025</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-primary rounded-full"></div>
-                        <span class="text-1xl"><strong>9:00 AM</strong> - Registration for Quiz and debugging challenge & Check-in</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-primary rounded-full"></div>
-                        <span class="text-1xl"><strong>10:00 AM</strong> - Inaugration & Opening Ceremony</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-primary rounded-full"></div>
-                        <span class="text-1xl"><strong>11:00 AM</strong> - Technical Quiz Round</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-primary rounded-full"></div>
-                        <span class="text-1xl"><strong>2:00 PM</strong> - IoT Debugging Challenge</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-primary rounded-full"></div>
-                        <span class="text-1xl"><strong>4:00 PM</strong> - Day 1 Endnote</span>
-                    </div>
+                <div class="text-sm text-muted-foreground">Oct 13, 9:00 AM - Oct 13, 5:00 PM</div>
+            </div>
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                <span class="text-1xl"><strong>9:00 AM</strong> - Onspot Registrations for CipherQuest (Quiz) and Iotrix Debugging challenge & Check-in</span>
                 </div>
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                <span class="text-1xl"><strong>9:30 AM</strong> - Inaugration & Opening Ceremony</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                <span class="text-1xl"><strong>10:30 AM - 12:30 PM</strong> - CipherQuest Quiz</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                <span class="text-1xl"><strong>12:35 PM - 1:30 PM</strong> - Break</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                <span class="text-1xl"><strong>1:45 PM - 4:00PM</strong> - IoT Debugging Challenge</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-primary rounded-full"></div>
+                <span class="text-1xl"><strong>4:30 PM</strong> - Results & Rewards of 2 contests</span>
+                </div>
+            </div>
             </div>
             <!-- Day 2 -->
             <div class="bg-card rounded-xl p-6 border border-border hover-glow schedule-checkpoint" data-checkpoint="2">
-                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                        <h3 class="text-2xl font-bold text-secondary mb-2">Day 2 - Hackathon Begins</h3>
-                        <p class="text-lg text-muted-foreground">October 14, 2025</p>
-                    </div>
-                    <div class="text-sm text-muted-foreground">Oct 14, 9:00 AM - Oct 15, 12:00 AM</div>
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <div>
+                <h3 class="text-2xl font-bold text-secondary mb-2">Day 2 - HackVerse-24 Hour Hackathon</h3>
+                <p class="text-lg text-muted-foreground">October 14, 2025</p>
                 </div>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
-                        <span class="text-1xl"><strong>9:00 AM</strong> - Instuctions session about hackathon </span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
-                        <span class="text-1xl"><strong>10:00 AM</strong> - Start of Hackathon</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
-                        <span class="text-1xl"><strong>1:00 PM</strong> - Lunch Break</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
-                        <span class="text-1xl"><strong>2:30 PM</strong> - Round-1 Evaluation</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
-                        <span class="text-1xl"><strong>5:00 PM</strong> - Refreshment break & Activities </span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
-                        <span class="text-1xl"><strong>7:00 PM</strong> - Round-2 Evaluation</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
-                        <span class="text-1xl"><strong>8:30 PM</strong> - Dinner & Night Coding</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-secondary rounded-full"></div>
-                        <span class="text-1xl"><strong>12:00 AM</strong> - Refreshment Activities</span>
-                    </div>
+                <div class="text-sm text-muted-foreground">Oct 14, 9:00 AM - Oct 15, 12:00 AM</div>
+            </div>
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                <span class="text-1xl"><strong>9:00 AM</strong> - Instuctions session about hackathon </span>
                 </div>
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                <span class="text-1xl"><strong>10:00 AM</strong> - Start of Hackathon</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                <span class="text-1xl"><strong>1:00 PM - 2:00 PM</strong> - Lunch Break (Timings may vary)</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                <span class="text-1xl"><strong>2:45 PM</strong> - Inspection of your Prototypes</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                <span class="text-1xl"><strong>5:00 PM</strong> - Refreshment break & Activities</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                <span class="text-1xl"><strong>8:30 PM - 9:30 PM</strong> - Dinner</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-secondary rounded-full"></div>
+                <span class="text-1xl"><strong>12:00 AM</strong> - Refreshment Activities</span>
+                </div>
+            </div>
             </div>
             <!-- Day 3 -->
             <div class="bg-card rounded-xl p-6 border border-border hover-glow" data-testid="schedule-day-3">
-                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                    <div>
-                        <h3 class="text-2xl font-bold text-accent mb-2">Day 3 - Finale</h3>
-                        <p class="text-lg text-muted-foreground">October 15, 2025</p>
-                    </div>
-                    <div class="text-sm text-muted-foreground">Oct 15, 9:00 AM - Oct 15, 5:00 PM</div>
+            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                <div>
+                <h3 class="text-2xl font-bold text-accent mb-2">Day 3 - Finale</h3>
+                <p class="text-lg text-muted-foreground">October 15, 2025</p>
                 </div>
-                
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-accent rounded-full"></div>
-                        <span class="text-1xl"><strong>9:30 AM</strong> - Breakfast</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-accent rounded-full"></div>
-                        <span class="text-1xl"><strong>10:30 AM</strong> - End of hackathon</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-accent rounded-full"></div>
-                        <span class="text-1xl"><strong>11:00 PM</strong> - Start of Final Round Evaluation & Presentation</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-accent rounded-full"></div>
-                        <span class="text-1xl"><strong>1:00 PM</strong> - Judging & Evaluation </span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-accent rounded-full"></div>
-                        <span class="text-1xl"><strong>3:00 PM</strong> - Results & Awards</span>
-                    </div>
-                    <div class="flex items-center space-x-3">
-                        <div class="w-2 h-2 bg-accent rounded-full"></div>
-                        <span class="text-1xl"><strong>4:30 PM</strong> - Closing Ceremony</span>
-                    </div>
+                <div class="text-sm text-muted-foreground">Oct 15, 9:00 AM - Oct 15, 5:00 PM</div>
+            </div>
+            <div class="flex flex-col gap-4">
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                <span class="text-1xl"><strong>9:30 AM</strong> - Breakfast</span>
                 </div>
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                <span class="text-1xl"><strong>10:30 AM</strong> - End of hackathon</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                <span class="text-1xl"><strong>11:00 PM</strong> - Start of Final Evaluation & Presentation</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                <span class="text-1xl"><strong>1:00 PM</strong> - Judging & Evaluation </span>
+                </div>
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                <span class="text-1xl"><strong>3:00 PM</strong> - Results & Awards For HackVerse</span>
+                </div>
+                <div class="flex items-center space-x-3">
+                <div class="w-2 h-2 bg-accent rounded-full"></div>
+                <span class="text-1xl"><strong>4:30 PM</strong> - Closing Ceremony</span>
+                </div>
+            </div>
+            </div>
             </div>
         </div>
     </div>
 </section>
-
-    <!-- Problems Section -->
-    <section id="problems" class="py-20 slide-in-right">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                    Problem <span class="gradient-text">Statements</span>
-                </h2>
-                <p class="text-lg text-muted-foreground">Challenge yourself with these exciting problem statements across different domains</p>
-            </div>
-            <div class="space-y-6">
-                <!-- IoT Problems -->
-                <div class="accordion-item bg-card rounded-xl border border-border overflow-hidden">
-                    <button class="accordion-trigger w-full p-6 text-left hover:bg-muted/20 transition-colors" data-testid="problem-toggle-0">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-4">
-                                <i data-lucide="cpu" class="text-primary h-6 w-6"></i>
-                                <h3 class="text-xl font-bold text-foreground">IoT & Hardware (3 Problems)</h3>
-                            </div>
-                            <i data-lucide="chevron-down" class="text-muted-foreground transition-transform accordion-icon"></i>
-                        </div>
-                    </button>
-                    <div class="accordion-content px-6 pb-6 hidden">
-                        <div class="space-y-4">
-                            <div class="flex justify-center items-center">
-                                <h1 class="font-bold text-primary mb-8 text-3xl text-center">Will be released soon</h1>
-                            </div>
-                            <!-- <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-0-0">
-                                <h4 class="font-semibold text-primary mb-2">Smart Campus Energy Management</h4>
-                                <p class="text-sm text-muted-foreground mb-3">Design an IoT-based system to monitor and optimize energy consumption across college buildings. Integrate sensors, data collection, and automated control systems.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">Arduino</span>
-                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">Sensors</span>
-                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">MQTT</span>
-                                </div>
-                            </div>
-                            <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-0-1">
-                                <h4 class="font-semibold text-primary mb-2">Precision Agriculture Monitor</h4>
-                                <p class="text-sm text-muted-foreground mb-3">Create a comprehensive IoT solution for monitoring soil conditions, weather patterns, and crop health with automated irrigation control.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">ESP32</span>
-                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">LoRa</span>
-                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">Cloud</span>
-                                </div>
-                            </div> -->
-                        </div>
-                    </div>
-                </div>
-                <!-- Data Science Problems -->
-                <div class="accordion-item bg-card rounded-xl border border-border overflow-hidden">
-                    <button class="accordion-trigger w-full p-6 text-left hover:bg-muted/20 transition-colors" data-testid="problem-toggle-1">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-4">
-                                <i data-lucide="trending-up" class="text-secondary h-6 w-6"></i>
-                                <h3 class="text-xl font-bold text-foreground">Data Science (4 Problems)</h3>
-                            </div>
-                            <i data-lucide="chevron-down" class="accordion-icon text-muted-foreground transition-transform"></i>
-                        </div>
-                    </button>
-                    <div class="accordion-content px-6 pb-6 hidden">
-                        <div class="space-y-4">
-                            <div class="flex justify-center items-center">
-                                <h1 class="font-bold text-primary mb-8 text-3xl text-center">Will be released soon</h1>
-                            </div>
-                            <!--<div class="bg-muted/30 rounded-lg p-4">
-                                <h4 class="font-semibold text-secondary mb-2">Campus Placement Predictor</h4>
-                                <p class="text-sm text-muted-foreground mb-3">Build a model to predict student placement chances based on academic and extracurricular data.</p>
-                            </div>
-                            <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-1-1">
-                                <h4 class="font-semibold text-secondary mb-2">Smart Library Analytics</h4>
-                                <p class="text-sm text-muted-foreground mb-3">Analyze library usage patterns and recommend book purchases using clustering and visualization.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">Clustering</span>
-                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">Visualization</span>
-                                </div>
-                            </div>-->
-                        </div>
-                    </div>
-                </div>
-                <!-- Cybersecurity Problems -->
-                <div class="accordion-item bg-card rounded-xl border border-border overflow-hidden">
-                    <button class="accordion-trigger w-full p-6 text-left hover:bg-muted/20 transition-colors" data-testid="problem-toggle-2">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-4">
-                                <i data-lucide="shield" class="text-accent h-6 w-6"></i>
-                                <h3 class="text-xl font-bold text-foreground">Cybersecurity (2 Problems)</h3>
-                            </div>
-                            <i data-lucide="chevron-down" class="text-muted-foreground transition-transform accordion-icon"></i>
-                        </div>
-                    </button>
-                    <div class="accordion-content px-6 pb-6 hidden">
-                        <div class="space-y-4">
-                            <div class="flex justify-center items-center">
-                                <h1 class="font-bold text-primary mb-8 text-3xl text-center">Will be released soon</h1>
-                            </div>
-                            <!--<div class="bg-muted/30 rounded-lg p-4" data-testid="problem-2-0">
-                                <h4 class="font-semibold text-accent mb-2">Secure File Sharing</h4>
-                                <p class="text-sm text-muted-foreground mb-3">Design a secure file sharing platform using encryption and access control.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-accent/10 text-accent px-2 py-1 rounded text-xs">Encryption</span>
-                                    <span class="bg-accent/10 text-accent px-2 py-1 rounded text-xs">Access Control</span>
-                                </div>
-                            </div>-->
-                        </div>
-                    </div>
-                </div>
-                <!-- AI/ML Problems -->
-                <div class="accordion-item bg-card rounded-xl border border-border overflow-hidden">
-                    <button class="accordion-trigger w-full p-6 text-left hover:bg-muted/20 transition-colors" data-testid="problem-toggle-3">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-4">
-                                <i data-lucide="brain" class="text-primary h-6 w-6"></i>
-                                <h3 class="text-xl font-bold text-foreground">AI/ML (3 Problems)</h3>
-                            </div>
-                            <i data-lucide="chevron-down" class="text-muted-foreground transition-transform accordion-icon"></i>
-                        </div>
-                    </button>
-                    <div class="accordion-content px-6 pb-6 hidden">
-                        <div class="space-y-4">
-                            <div class="flex justify-center items-center">
-                                <h1 class="font-bold text-primary mb-8 text-3xl text-center">Will be released soon</h1>
-                            </div>
-                            <!--<div class="bg-muted/30 rounded-lg p-4" data-testid="problem-3-0">
-                                <h4 class="font-semibold text-primary mb-2">Image Classification</h4>
-                                <p class="text-sm text-muted-foreground mb-3">Develop a model to classify images into different categories using deep learning techniques.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">TensorFlow</span>
-                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">Keras</span>
-                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">CNN</span>
-                                </div>
-                            </div>
-                            <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-3-1">
-                                <h4 class="font-semibold text-primary mb-2">Sentiment Analysis</h4>
-                                <p class="text-sm text-muted-foreground mb-3">Build a sentiment analysis tool to classify text as positive, negative, or neutral.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">NLTK</span>
-                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">TextBlob</span>
-                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">VADER</span>
-                                </div>
-                            </div>
-                            <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-3-2">
-                                <h4 class="font-semibold text-primary mb-2">Stock Price Prediction</h4>
-                                <p class="text-sm text-muted-foreground mb-3">Predict future stock prices using historical data and machine learning algorithms.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">Pandas</span>
-                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">Scikit-learn</span>
-                                    <span class="bg-primary/10 text-primary px-2 py-1 rounded text-xs">LSTM</span>
-                                </div>
-                            </div>-->
-                        </div>
-                    </div>
-                </div>
-                <!-- Web Development Problems -->
-                <div class="accordion-item bg-card rounded-xl border border-border overflow-hidden">
-                    <button class="accordion-trigger w-full p-6 text-left hover:bg-muted/20 transition-colors" data-testid="problem-toggle-4">
-                        <div class="flex items-center justify-between">
-                            <div class="flex items-center space-x-4">
-                                <i data-lucide="code" class="text-secondary h-6 w-6"></i>
-                                <h3 class="text-xl font-bold text-foreground">Web Development (3 Problems)</h3>
-                            </div>
-                            <i data-lucide="chevron-down" class="text-muted-foreground transition-transform accordion-icon"></i>
-                        </div>
-                    </button>
-                    <div class="accordion-content px-6 pb-6 hidden">
-                        <div class="space-y-4">
-                            <div class="flex justify-center items-center">
-                                <h1 class="font-bold text-primary mb-8 text-3xl text-center">Will be released soon</h1>
-                            </div>
-                           <!--<div class="bg-muted/30 rounded-lg p-4" data-testid="problem-4-0">
-                                <h4 class="font-semibold text-secondary mb-2">Portfolio Website</h4>
-                                <p class="text-sm text-muted-foreground mb-3">Create a personal portfolio website to showcase your projects, skills, and experience.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">HTML</span>
-                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">CSS</span>
-                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">JavaScript</span>
-                                </div>
-                            </div>
-                            <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-4-1">
-                                <h4 class="font-semibold text-secondary mb-2">Blog Platform</h4>
-                                <p class="text-sm text-muted-foreground mb-3">Develop a full-stack blog platform with user authentication, post creation, and comments.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">Node.js</span>
-                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">Express</span>
-                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">MongoDB</span>
-                                </div>
-                            </div>
-                            <div class="bg-muted/30 rounded-lg p-4" data-testid="problem-4-2">
-                                <h4 class="font-semibold text-secondary mb-2">E-commerce Site</h4>
-                                <p class="text-sm text-muted-foreground mb-3">Build a complete e-commerce site with product listings, shopping cart, and payment integration.</p>
-                                <div class="flex flex-wrap gap-2">
-                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">React</span>
-                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">Redux</span>
-                                    <span class="bg-secondary/10 text-secondary px-2 py-1 rounded text-xs">Firebase</span>
-                                </div>
-                            </div>-->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Prizes Section -->
     <section id="prizes" class="py-20 bg-muted/20 slide-in-left">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -727,7 +553,7 @@
 
                 <!-- Tier 2 -->
                 <div class="bg-card rounded-xl p-6 border border-border hover-glow" data-testid="prize-tier-2">
-                    <h3 class="text-2xl font-bold mb-4 text-secondary">💡CypherQuest (Quiz) </h3>
+                    <h3 class="text-2xl font-bold mb-4 text-secondary">💡CipherQuest (Quiz) </h3>
                     <p class="text-lg text-muted-foreground mb-4">₹3,000 Cash Prize Poll</p>
                     <p class="text-sm text-muted-foreground"> Winners will get a cash prize and exclusive TechFusion swag.</p>
                 </div>
@@ -1019,4 +845,3 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 </body>
 </html>
-
