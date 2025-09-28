@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Countdown Timer
-const eventDate = new Date("2025-10-14T09:00:00").getTime();
+const eventDate = new Date("2025-10-13T09:00:00").getTime();
 
     const timer = setInterval(function() {
       const now = new Date().getTime();
@@ -405,6 +405,7 @@ document.addEventListener('DOMContentLoaded', function() {
   scatterStickers();
   window.addEventListener('resize', scatterStickers);
 });
+
 
 
 
