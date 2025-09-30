@@ -480,4 +480,15 @@ body {
 @keyframes sticker-bounce {
   from { transform: translateY(0);}
   to   { transform: translateY(-12px);}
+
+}
+.marquee {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee-scroll 12s linear infinite;
+}
+
+@keyframes marquee-scroll {
+  0%   { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
 }
